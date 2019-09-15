@@ -45,11 +45,11 @@ void WarningPage::touch(vector<int>& command) {
 					controller.printer->start_printing(controller.printer->to_print);
 					break;
 				}
-				case Reason::FOR_PRINT: {
-					cout << "FOR_PRINT" << endl;
-					controller.printer->start_slicing(controller.printer->to_slice);
-					break;
-				}
+				// case Reason::FOR_PRINT: {
+				// 	cout << "FOR_PRINT" << endl;
+				// 	controller.printer->start_slicing(controller.printer->to_slice);
+				// 	break;
+				// }
 				case Reason::FOR_ABORT: {
 					cout << "FOR_ABORT" << endl;
 					controller.printer->abort_printing();

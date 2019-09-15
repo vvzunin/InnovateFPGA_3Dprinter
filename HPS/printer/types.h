@@ -5,7 +5,7 @@
 
 
 enum StateType {Waiting, 
-                Slicing,
+                //Slicing,
                 Printing,
                 Pause_Printing,
                 Stop_Printing,
@@ -127,12 +127,12 @@ struct PrinterVariables {
         bool isTemperatureAuto = false; // ?
     };
 
-    // Slicer settings
-    struct Slicer {
-        float layerWidth       = 0.25f;
-        float baseThicknes     = 0.1f;
-        float fillingDensity   = 10; //в процентах
-    };
+    // // Slicer settings
+    // struct Slicer {
+    //     float layerWidth       = 0.25f;
+    //     float baseThicknes     = 0.1f;
+    //     float fillingDensity   = 10; //в процентах
+    // };
 
     // Presets settings
     struct Presets {
@@ -178,7 +178,7 @@ struct PrinterVariables {
     Position position;
 
     Presets presets;
-    Slicer slicer;
+    //Slicer slicer;
     Movement movement;
 };
 

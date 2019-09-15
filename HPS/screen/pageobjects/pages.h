@@ -221,69 +221,69 @@ private:
 };
 
 
-class PrintSetupPage: public BasePage {
+// class PrintSetupPage: public BasePage {
 
-	enum class Button {
-		b_start_print	= 2,
-		b_return		= 3,
-		b_preset_1		= 10,
-		b_preset_2		= 11,
-		b_preset_3		= 12,
-		b_preset_4		= 13,
-		b_preset_5		= 14,
-		b_preset_6		= 15,
-		b_precis_1		= 19,
-		b_precis_2		= 20,
-		b_precis_3		= 21,
-		b_precis_4		= 22,
-		b_precis_5		= 23,
-		b_r1_minus		= 4,
-		b_r2_minus		= 5,
-		b_r3_minus		= 6,
-		b_r1_plus		= 7,
-		b_r2_plus		= 8,
-		b_r3_plus		= 9,
-	};
+// 	enum class Button {
+// 		b_start_print	= 2,
+// 		b_return		= 3,
+// 		b_preset_1		= 10,
+// 		b_preset_2		= 11,
+// 		b_preset_3		= 12,
+// 		b_preset_4		= 13,
+// 		b_preset_5		= 14,
+// 		b_preset_6		= 15,
+// 		b_precis_1		= 19,
+// 		b_precis_2		= 20,
+// 		b_precis_3		= 21,
+// 		b_precis_4		= 22,
+// 		b_precis_5		= 23,
+// 		b_r1_minus		= 4,
+// 		b_r2_minus		= 5,
+// 		b_r3_minus		= 6,
+// 		b_r1_plus		= 7,
+// 		b_r2_plus		= 8,
+// 		b_r3_plus		= 9,
+// 	};
 
-	enum class Indicator {
-		i_layer_w,
-		i_base_t,
-		i_fiiling_d,
-		b_preset_1,
-		b_preset_2,
-		b_preset_3,
-		b_preset_4,
-		b_preset_5,
-		b_preset_6,
-		b_precis_1,
-		b_precis_2,
-		b_precis_3,
-		b_precis_4,
-		b_precis_5
-	};
+// 	enum class Indicator {
+// 		i_layer_w,
+// 		i_base_t,
+// 		i_fiiling_d,
+// 		b_preset_1,
+// 		b_preset_2,
+// 		b_preset_3,
+// 		b_preset_4,
+// 		b_preset_5,
+// 		b_preset_6,
+// 		b_precis_1,
+// 		b_precis_2,
+// 		b_precis_3,
+// 		b_precis_4,
+// 		b_precis_5
+// 	};
 
-public:
-	/* Constructors and destructors */
-	PrintSetupPage(ScreenController& controller);
-	virtual ~PrintSetupPage() { }
+// public:
+// 	/* Constructors and destructors */
+// 	PrintSetupPage(ScreenController& controller);
+// 	virtual ~PrintSetupPage() { }
 
-	/* Methods*/
-	virtual void update();
-	virtual void touch(std::vector<int>& command);
+// 	/* Methods*/
+// 	virtual void update();
+// 	virtual void touch(std::vector<int>& command);
 
-private:
-	/* Properties */
-	bool isUpdateFirstTime;
+// private:
+// 	/* Properties */
+// 	bool isUpdateFirstTime;
 
-	/* Methods*/
-	void updateIndicators();
+// 	/* Methods*/
+// 	void updateIndicators();
 
-	void updatePresetBar();
+// 	void updatePresetBar();
 
-	void updatePrecisionBar();
+// 	void updatePrecisionBar();
 
-	std::string indicator2string(const Indicator& code) const ;
-};
+// 	std::string indicator2string(const Indicator& code) const ;
+// };
 
 
 class PrintingPage: public BasePage {
