@@ -1,0 +1,23 @@
+module clk_gen(
+	input 	wire 				clk, 
+	input		reg	[31:0]	reduction,
+	output 	wire 				clk_out);
+	
+	reg [7:0] m = 8'b00000000;
+
+	reg signal = 1'b1;
+	
+	always @(clk)
+	begin
+		if (m!=0)
+			m = m - 1;
+		else
+			begin
+				signal = ~signal;
+				m = param - 1;
+			end
+	end
+	
+	assign clk_out = signal;
+	
+endmodule

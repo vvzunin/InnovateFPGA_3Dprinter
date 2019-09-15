@@ -1,0 +1,75 @@
+ module stepper_z(
+						input 	wire 				clk, 
+						input		wire	[31:0]	stepper_step_in,						
+						input		wire	[31:0]	stepper_speed,
+						input		wire				stepper_enable,
+						
+						output 	wire 				step_signal, //Максимально 25 MHz при reduction = 1
+						output 	wire 				enable,
+						output	wire				dir,
+						output	wire				stepper_driving,
+						output 	wire 	[31:0] 	stepper_step_out);
+		
+	
+	reg [31:0] 	m		 					= 0;
+	reg 			signal 					= 1'b0;	
+	reg [30:0] 	n		 					= 0;	
+	reg			stepper_driving_reg 	= 0; 
+	reg [31:0]	stepper_step;
+	
+	assign stepper_driving = stepper_driving_reg;	
+	assign step_signal = signal;	
+	assign enable = ~stepper_enable;	
+	assign dir = stepper_step[31];	
+	assign stepper_step_out = stepper_step;
+	
+	
+	always @(posedge clk)
+	begin		
+		if (stepper_driving_reg == 1'b0)
+		begin
+			if (stepper_step_in[30:0] != 0)
+			begin
+				stepper_step = stepper_step_in;
+				stepper_driving_reg = 1'b1;
+				signal = 1'b1;
+				
+				n = stepper_step[30:0];
+				if (stepper_step[31] == 1'b1)
+					n = ~n + 1;
+				m = stepper_speed - 1;
+			end
+		end
+		else
+		begin		
+			if (n != 0)
+			begin
+				if (m != 0)
+					m = m - 1;
+				else
+					begin
+						signal = ~signal;
+						m = stepper_speed - 1;
+						if (signal == 0)
+							n = n - 1;
+					end
+			end
+			else
+			begin
+				signal = 1'b0;
+				stepper_driving_reg = 1'b0;
+				if (stepper_step[31] == 1'b0)
+					stepper_step = {stepper_step[31], n};
+				else
+					stepper_step = {stepper_step[31], ~n + 1};
+			end
+			
+		end
+
+
+	
+	end
+	
+	
+	
+endmodule
