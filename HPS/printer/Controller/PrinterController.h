@@ -107,7 +107,6 @@ public:
     void block_screen();
     void abort_printing();
     void start_printing(string path);
-    void print_settings(SlicingParameters sp);
 
     //Settings.General
     void change_general_settings(int sg); //PreprintSetup and SettingsPID

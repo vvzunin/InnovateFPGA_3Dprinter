@@ -153,7 +153,7 @@ bool FileManager::isValidExtension(const string& fileName) {
 	auto found = fileName.find_last_of(".");
 	string ext = fileName.substr(found+1);
 
-	if (ext == "g" || ext == "stl" || ext == "gcode") {
+	if (ext == "g" || ext == "gcode") {
 		return true;
 	} else {
 		return false;

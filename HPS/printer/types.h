@@ -5,7 +5,6 @@
 
 
 enum StateType {Waiting, 
-                //Slicing,
                 Printing,
                 Pause_Printing,
                 Stop_Printing,

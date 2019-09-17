@@ -94,11 +94,6 @@ void ScreenController::setCurrentScreen(Screen name) {
 			currentPage = new PrintPage(*this);
 			break;
 		}
-		case PRINT_SETUP:
-		{
-			currentPage = new PrintSetupPage(*this);
-			break;
-		}
 		case PRINTING:
 		 { 
 			currentPage = new PrintingPage(*this);

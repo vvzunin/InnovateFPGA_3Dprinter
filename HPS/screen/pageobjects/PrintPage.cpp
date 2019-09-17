@@ -158,16 +158,6 @@ void  PrintPage::rowButtonPressed(int row) {
 				// to lower case 
 				transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
 
-				if (ext == "stl") {
-					// CHANGE FILE NAME TO WORK WITH FOR PRINTER
-					// send choosed file.
-
-					controller.printer->to_slice = controller.printer->fileManager.getCurrentFolder() + "/" + choosedPair.first;
-
-					cout << "OK - PrintPage::rowButtonPressed - to_slice: " << controller.printer->to_slice << endl;
-
-					controller.setCurrentScreen(ScreenController::Screen::PRINT_SETUP);
-				}
 				// GCODE
 				if (ext == "g" || ext == "gcode") {
 

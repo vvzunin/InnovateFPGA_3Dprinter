@@ -400,39 +400,6 @@ void PrinterController::start_printing(string path)
     state = Printing;
 }
 
-void PrinterController::print_settings(SlicingParameters sp)
-{
-    switch (sp) {
-        case Layer_Width_Minus:
-            settings.slicer.layerWidth -= settings.common.currentPrecision / 100.0;
-            if (settings.slicer.layerWidth < 0)
-                settings.slicer.layerWidth = 0;
-            break;
-        case Layer_Width_Plus:
-            settings.slicer.layerWidth += settings.common.currentPrecision / 100.0;
-            break;
-        case Base_Thicknes_Minus:
-            settings.slicer.baseThicknes -= settings.common.currentPrecision / 100.0;
-            if (settings.slicer.baseThicknes < 0)
-                settings.slicer.baseThicknes = 0;
-            break;
-        case Base_Thicknes_Plus:
-            settings.slicer.baseThicknes += settings.common.currentPrecision / 100.0;
-            break;
-        case Filling_Density_Minus:
-            settings.slicer.fillingDensity -= settings.common.currentPrecision / 100.0;
-            if (settings.slicer.fillingDensity < 0)
-                settings.slicer.fillingDensity = 0;
-            break;
-        case Filling_Density_Plus:
-            settings.slicer.fillingDensity += settings.common.currentPrecision / 100.0;
-            break;
-        default:
-            break;
-    }
-    screen.update();
-}
-
 void PrinterController::change_general_settings(int sg)
 {
     Parameters a;
