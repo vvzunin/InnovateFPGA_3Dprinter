@@ -1,4 +1,4 @@
-# Проект "3D Принтер на ПЛИС"
+# Project "Smart 3D printer using DE10-Nano HPS/FPGA"
 
 Purpose: to create a 3D printer that helps to prevent failures and problems during a printing progress, to have a user-friendly control interface (LCD display), an isolated body and a large printing area.
 
