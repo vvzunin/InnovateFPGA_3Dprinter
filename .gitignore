@@ -19,7 +19,6 @@ FPGA/*.qarlog
 FPGA/*.qws
 FPGA/*.rpt
 FPGA/*.smsg
-FPGA/*.sof
 FPGA/*.sopc_builder
 FPGA/*.summary
 FPGA/*.tcl
