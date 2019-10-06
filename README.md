@@ -6,4 +6,5 @@ Applications: The scope of 3D printers application is wide. We use SoC to provid
 
 Target user: This product is a prototype of future 3D printers on SoC. At present, there are no similar products in the middle price segment. Our team presents a new concept of a printer control system which provides a convenient user interface with the possibility of further connection to smart home systems using IoT technology.   
 #Project description: http://www.innovatefpga.com/cgi-bin/innovate/teams.pl?Id=EM024 
+
 #YouTube: https://youtu.be/GpOixhp82RM
